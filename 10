@@ -1,0 +1,33 @@
+using System;
+
+namespace GradeCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the midterm grade: ");
+            double midtermGrade = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter the final grade: ");
+            double finalGrade = double.Parse(Console.ReadLine());
+
+            double finalScore = CalculateFinalScore(midtermGrade, finalGrade);
+            Console.WriteLine("The final score is {0}.", finalScore);
+
+            if (finalScore >= 60)
+            {
+                Console.WriteLine("Congratulations, you passed!");
+            }
+            else
+            {
+                Console.WriteLine("Sorry, you failed.");
+            }
+        }
+
+        static double CalculateFinalScore(double midtermGrade, double finalGrade)
+        {
+            return (0.35 * midtermGrade) + (0.65 * finalGrade);
+        }
+    }
+}
