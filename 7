@@ -1,0 +1,138 @@
+using System;
+
+namespace Project {
+    internal class App {
+        public static void Main()
+        {
+            Console.WriteLine("مثلث:\n");
+            Console.WriteLine("Enter a (قاعده) of triangle:");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter b of triangle:");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter c of triangle:");
+            int c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter h(ارتفاع) of triangle:");
+            int h = Convert.ToInt32(Console.ReadLine());
+
+            Triangle T = new Triangle(a, b, c, h);
+            Console.WriteLine("mohit mosalas:" + T.mohit() + ", masahat:" + T.masahat());
+
+            Console.WriteLine("ذوزنقه:\n");
+            Console.WriteLine("Enter a (قاعده بزرگ) ذوزنقه:");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter b (قاعده کوچک) ذوزنقه:");
+            b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter c:");
+            c = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter d:");
+            int d = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter h(ارتفاع) ذوزنقه:");
+            h = Convert.ToInt32(Console.ReadLine());
+
+            Zoozanaghe Z = new Zoozanaghe(a, b, c, d, h);
+            Console.WriteLine("mohit zoozanaghe:" + Z.mohit() + ", masahat:" + Z.masahat());
+        }
+    }
+
+    internal class Triangle {
+        //? اضلاع:
+        private int a;  //? قاعده
+        private int b;
+        private int c;
+        private int h;  //? ارتفاع
+
+        //? Setters & Getters
+        public int A
+        {
+            get{return a;}
+            set{a = Math.Abs(value);}
+        }
+        public int B
+        {
+            get { return b; }
+            set { b = Math.Abs(value); }
+        }
+        public int C
+        {
+            get { return c; }
+            set { c = Math.Abs(value); }
+        }
+        public int H
+        {
+            get { return h; }
+            set { h = Math.Abs(value); }
+        }
+
+        //? constructors & destructors سازنده و 
+        public Triangle(int a, int b, int c, int h){
+            A = a;
+            B = b;
+            C = c;
+            H = h;
+        }
+        public Triangle(){}
+
+
+        public double mohit()
+        {
+            return a + b + c;
+        }
+
+        public double masahat()
+        {
+            return (a * h) / 2;
+        }
+    }
+
+    internal class Zoozanaghe {
+        private int a; //? قاعده کوچک
+        private int b; //? قاعده بزرگ
+        private int c; 
+        private int d; 
+        private int h; //? ارتفاع
+
+        //? getter & setter
+        public int A {
+            get{return a;}
+            set{a = Math.Abs(value);}
+        }
+        public int B
+        {
+            get { return b; }
+            set { b = Math.Abs(value); }
+        }
+        public int C
+        {
+            get { return c; }
+            set { c = Math.Abs(value); }
+        }
+        public int D
+        {
+            get { return d; }
+            set { d = Math.Abs(value); }
+        }
+        public int H
+        {
+            get { return h; }
+            set { h = Math.Abs(value); }
+        }
+
+        //? constructors & destructors سازنده و 
+        public Zoozanaghe(int a, int b, int c, int d, int h) {
+            A = a;
+            B = b;
+            C = c;
+            D = d;
+            H = h;
+        }
+        public Zoozanaghe(){}
+
+        public double mohit(){
+            return a + b + c + d;
+        }
+        public double masahat()
+        {
+            return ( (a + b) / 2 ) * h;
+        }
+    }
+}
