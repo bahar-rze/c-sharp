@@ -1,0 +1,95 @@
+sing System;
+
+namespace LineLength
+{
+class Point
+{
+public int x, y;
+
+public Point(int x, int y)
+{
+this.x = x;
+this.y = y;
+}
+}
+
+class Line
+{
+public Point p1, p2;
+
+public Line(Point p1, Point p2)
+{
+this.p1 = p1;
+this.p2 = p2;
+}
+
+public double Length()
+{
+return CalculateDistance(p1, p2);
+}
+
+private double CalculateDistance(Point p1, Point p2)
+{
+int dx = p1.x - p2.x;
+int dy = p1.y - p2.y;
+
+return Math.Sqrt(dx * dx + dy * dy);
+}
+}
+
+class Program
+{
+static void Main(string[] args)
+{
+Console.WriteLine("Enter coordinates of first point of line 1:");
+Console.Write("x1 = ");
+int x1 = int.Parse(Console.ReadLine());
+Console.Write("y1 = ");
+int y1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter coordinates of second point of line 1:");
+Console.Write("x2 = ");
+int x2 = int.Parse(Console.ReadLine());
+Console.Write("y2 = ");
+int y2 = int.Parse(Console.ReadLine());
+
+Point p1_1 = new Point(x1, y1);
+Point p2_1 = new Point(x2, y2);
+
+Line line1 = new Line(p1_1, p2_1);
+
+Console.WriteLine("Enter coordinates of first point of line 2:");
+Console.Write("x1 = ");
+x1 = int.Parse(Console.ReadLine());
+Console.Write("y1 = ");
+y1 = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Enter coordinates of second point of line 2:");
+Console.Write("x2 = ");
+x2 = int.Parse(Console.ReadLine());
+Console.Write("y2 = ");
+y2 = int.Parse(Console.ReadLine());
+
+Point p1_2 = new Point(x1, y1);
+Point p2_2 = new Point(x2, y2);
+
+Line line2 = new Line(p1_2, p2_2);
+
+double length1 = line1.Length();
+double length2 = line2.Length();
+
+if (length1 > length2)
+{
+Console.WriteLine($"Line 1 is longer than line 2 by {length1 - length2}");
+}
+else if (length2 > length1)
+{
+Console.WriteLine($"Line 2 is longer than line 1 by {length2 - length1}");
+}
+else
+{
+Console.WriteLine("Both lines are of equal length");
+}
+}
+}
+}

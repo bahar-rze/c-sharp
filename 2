@@ -1,0 +1,129 @@
+using system;
+class Program
+{
+	 static void Main(string[] args)
+		{
+
+			Console.WriteLine("Please enter the shape you want to calculate:");
+
+			Console.WriteLine("1. Circle");
+
+			Console.WriteLine("2. Square");
+
+			Console.WriteLine("3. mosalas");
+
+			Console.WriteLine("4. zoozan");
+
+			Console.WriteLine("5. Ellipse");
+
+			Console.WriteLine("6. n zeli");
+
+			Console.WriteLine("7. mostatile");
+
+
+
+			int choice = Convert.ToInt32(Console.ReadLine());
+
+
+
+			switch (choice)
+
+			{
+
+				case 1:
+
+					Console.Write("Enter the radius of the circle: ");
+
+					double r = Convert.ToDouble(Console.ReadLine());
+
+					Circle circle = new Circle(r);
+
+					Console.WriteLine("Area: " + circle.Getmasa());
+
+					Console.WriteLine("Perimeter: " + circle.GetPerimeter());
+
+					break;
+
+				case 2:
+
+					Console.Write("Enter the side length of the square: ");
+
+					double s = Convert.ToDouble(Console.ReadLine());
+
+					Square square = new Square(s);
+
+					Console.WriteLine("masahat: " + square.GetArea());
+
+					Console.WriteLine("mohit: " + square.GetPerimeter());
+
+					break;
+
+				case 3:
+
+					Console.Write("Enter the height of the triangle: ");
+
+					double h = Convert.ToDouble(Console.ReadLine());
+
+					Console.Write("Enter the base of the triangle: ");
+
+					double b = Convert.ToDouble(Console.ReadLine());
+
+					Triangle mosalas = new Triangle(h, b);
+
+					Console.WriteLine("masahat: " + mosalas.GetArea());
+
+					Console.WriteLine("mohit: " + mosalas.mohit());
+
+					break;
+
+				case 4:
+
+					Console.Write("Enter the height of the trapezoid: ");
+
+					double ht = Convert.ToDouble(Console.ReadLine());
+
+					Console.Write("Enter the length of the top base of the trapezoid: ");
+
+					double tp = Convert.ToDouble(Console.ReadLine());
+
+					Console.Write("Enter the length of the bottom base of the trapezoid: ");
+
+					double bt = Convert.ToDouble(Console.ReadLine());
+
+					Console.Write("Enter the length of side 1 of the trapezoid: ");
+
+					double s1 = Convert.ToDouble(Console.ReadLine());
+
+					Console.Write("Enter the length of side 2 of the trapezoid: ");
+
+					double s2 = Convert.ToDouble(Console.ReadLine());
+
+					Trapezoid trapezoid = new Trapezoid(ht, tp, bt, s1, s2);
+
+					Console.WriteLine("Area: " + trapezoid.GetArea());
+
+					Console.WriteLine("Perimeter: " + trapezoid.GetPerimeter());
+
+					break;
+
+				case 5:
+
+					Console.Write("Enter the length of the major axis of the ellipse: ");
+
+					double a = Convert.ToDouble(Console.ReadLine());
+
+					Console.Write("Enter the length of the minor axis of the ellipse: ");
+
+				b = Convert.ToDouble(Console.ReadLine());
+
+					Ellipse ellipse = new Ellipse(a, b);
+
+					Console.WriteLine("Area: " + ellipse.GetArea());
+
+					Console.WriteLine("Perimeter: " + ellipse.GetPerimeter());
+
+					break;
+
+				case 6:
+
+					Console.Write("Enter the number of sides of the polygon: ");

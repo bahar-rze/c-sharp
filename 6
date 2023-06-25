@@ -1,0 +1,103 @@
+using System;
+
+
+
+namespace تمرین1
+
+{
+
+    public class Teacher
+
+    {
+
+        private string id;
+
+        private string name;
+
+        private string lastname;
+
+        private int hours;
+
+        private int payperonehours;
+
+        public string Id
+
+        {
+
+            get { return id; }
+
+            set { id = value; }
+
+        }
+
+        public string Name
+
+        {
+
+            get { return name; }
+
+            set { name = value; }
+
+        }
+
+        public string Lastname
+
+        {
+
+            get { return lastname; }
+
+            set { lastname = value; }
+
+        }
+
+        public int Hours
+
+        {
+
+            get { return hours; }
+
+            set { hours = value; }
+
+        }
+
+        public int PayperOneHour
+
+        {
+
+            get { return payperonehours; }
+
+            set { if (value > 0)
+
+                { payperonehours = value; } }
+
+        }
+
+        public Teacher() {}
+
+    public Teacher(string Id, string Name, string Lastname, int Hours, int Payperonehours)
+
+    {
+
+        id = Id;
+
+        name = Name;
+
+        lastname = Lastname;
+
+        hours = Hours;
+
+        payperonehours = Payperonehours;
+
+    }
+
+    public long payment()
+
+    {
+
+        return hours * payperonehours;
+
+    }
+
+}//end class
+
+}//end namespace
